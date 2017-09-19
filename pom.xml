@@ -11,9 +11,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
+
         <artifactId>ordertracking-automation</artifactId>
         <groupId>hms.ordertracking</groupId>
         <version>1.0-SNAPSHOT</version>
+
 
 
     <modules>
@@ -65,10 +67,20 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.2</version>
         </dependency>
-
-
-
     </dependencies>
+    <build>
+        <finalName>ordertracking</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
 
 
 </project>
