@@ -14,4 +14,15 @@
     <packaging>jar</packaging>
 
 
+
+<dependencies>
+    <dependency>
+        <groupId>hms.ordertracking</groupId>
+        <artifactId>ordertracking-automation-orm</artifactId>
+        <version>1.0-SNAPSHOT
+        </version>
+    </dependency>
+</dependencies>
+
+
 </project>
