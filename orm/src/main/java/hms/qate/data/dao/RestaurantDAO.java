@@ -1,6 +1,7 @@
 package hms.qate.data.dao;
 
 import hms.qate.data.model.Employee;
+import hms.qate.data.model.Restaurant;
 
 import java.util.List;
 
@@ -9,5 +10,5 @@ import java.util.List;
  */
 public interface RestaurantDAO {
 
-    public List<Employee> getAllRestaurants(String employeeName);
+    public List<Restaurant> getAllRestaurants();
 }
