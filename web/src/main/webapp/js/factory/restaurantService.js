@@ -16,7 +16,7 @@
 
     function restaurantService($http) {
 
-        var webApi = "http://localhost:8080/rest/";
+        var webApi = "http://localhost:8080/ordertracking/";
 
 
         var service = {
@@ -30,7 +30,7 @@
 
 
         function getAllRestaurants() {
-            return $http.get(webApi + 'foodservice/getAllRestaurantsTest').then(handleSuccess, handleError('Error getting drivers'));
+            return $http.get(webApi + 'restaurant/getAllRestauranta').then(handleSuccess, handleError('Error getting drivers'));
         }
 
         function getAllCommentsByRestaurant(id) {

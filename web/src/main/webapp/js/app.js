@@ -15,7 +15,7 @@ var app = angular.module('yummy', [
 
 app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 
-   $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home');
 
     $mdThemingProvider.theme('indigo')
         .primaryPalette('indigo')
@@ -24,22 +24,22 @@ app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 
     $stateProvider
         .state('home', {
-            templateUrl: 'views/home.html',
+            templateUrl: 'views/home.jsp',
             controller: 'homeController',
             url: '/home'
         })
         .state('restaurant', {
-            templateUrl: 'views/restaurant.html',
+            templateUrl: 'views/restaurant.jsp',
             controller: 'restaurantController',
             url: '/restaurant'
         })
         .state('rating', {
-            templateUrl: 'views/rating.html',
+            templateUrl: 'views/rating.jsp',
             controller: 'ratingController',
             url: '/rating'
         })
         .state('findus', {
-            templateUrl: 'views/findus.html',
+            templateUrl: 'views/findus.jsp',
             controller: 'findusController',
             url: '/findus',
             params: {
@@ -47,18 +47,18 @@ app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
             }
         })
         .state('register', {
-            templateUrl: 'views/register.html',
+            templateUrl: 'views/register.jsp',
             controller: 'registerController',
             url: '/register'
         })
 
         .state('order', {
-            templateUrl: 'views/order.html',
+            templateUrl: 'views/order.jsp',
             controller: 'orderController',
             url: '/order'
         })
         .state('restaurantUpdate', {
-            templateUrl: 'views/restaurantUpdate.html',
+            templateUrl: 'views/restaurantUpdate.jsp',
             controller: 'restaurantUpdateController',
             url: '/restaurantUpdate',
             params: {
@@ -66,7 +66,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
             }
         })
         .state('customerRegister',{
-            templateUrl:'views/customerRegister.html',
+            templateUrl:'views/customerRegister.jsp',
             controller:'customerRegisterController',
             url:'/customerRegister',
             params:{

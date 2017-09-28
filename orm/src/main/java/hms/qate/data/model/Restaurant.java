@@ -20,6 +20,9 @@ public class Restaurant implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int Restaurant_ID;
 
+//    @Column
+//    private int Restaurant_ID;
+
     @Column
     private String Restaurant_Name;
     @Column
@@ -41,6 +44,7 @@ public class Restaurant implements Serializable {
     public Restaurant() {
     }
     public int getRestaurant_ID() {
+        System.out.println("dddddddddddddd"+Restaurant_ID);
         return Restaurant_ID;
     }
     public void setRestaurant_ID(int Restaurant_ID) {
