@@ -9,7 +9,7 @@
 
     function homeService($http) {
 
-        var webApi = "http://localhost:8080/rest/";
+        var webApi = "http://localhost:8080/ordertracking/";
 
 
         var service = {
@@ -23,15 +23,15 @@
 
 
         function getRestaurantsByFoodAndCity(filters) {
-            return $http.get(webApi + 'foodservice/foodWise?fo='+filters.foodName +'&ci='+filters.location).then(handleSuccess, handleError('Error getting drivers'));
+            return $http.get(webApi + 'restaurant/foodWise?fo='+filters.foodName +'&ci='+filters.location).then(handleSuccess, handleError('Error getting drivers'));
         }
 
         function getRestaurantsByName(filters) {
-            return $http.get(webApi + 'foodservice/restaurantWise?res='+filters.restaurantName).then(handleSuccess, handleError('Error getting single driver'));
+            return $http.post(webApi + 'restaurant/restaurantwise?res='+filters.restaurantName).then(handleSuccess, handleError('Error getting single driver'));
         }
 
         function getRestaurantsByLocation(filters) {
-            return $http.get(webApi + 'foodservice/locationWise?loc='+filters.nearestCity ).then(handleSuccess, handleError('Error getting single driver'));
+            return $http.post(webApi + 'restaurant/locationwise?loc='+filters.nearestCity ).then(handleSuccess, handleError('Error getting single driver'));
         }
 
 

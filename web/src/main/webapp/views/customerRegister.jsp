@@ -135,7 +135,7 @@
 
                 <md-input-container md-no-float class="md-block">
                     <label style="color:#ffffff;">User Name</label>
-                    <input required name="uName" ng-model="filters.username" minlength="5" maxlength="20"  type="text" style="color:#ffffff;">
+                    <input required name="uName" ng-model="filters.username" minlength="3" maxlength="20"  type="text" style="color:#ffffff;">
 
                     <div required ng-messages="nform.uName.$error">
                         <div ng-message="required">This is required.</div>
