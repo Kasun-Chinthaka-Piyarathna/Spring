@@ -1,9 +1,6 @@
-
-
-
 <md-content style
 >
-    <div class ="aboutus">
+    <div class="aboutus">
 
 
         <style>
@@ -20,7 +17,7 @@
         </style>
 
         <style>
-            table, th , td {
+            table, th, td {
                 border: 1px solid grey;
                 border-collapse: collapse;
                 padding: 5px;
@@ -41,45 +38,47 @@
             <div flex>
             </div>
 
-            <div flex >
+            <div flex>
                 <md-card style="background-image:url(js/Lib/slider/images/bg14.jpg) ">
-                    <md-list-item class="md-3-line"  ng-click="null">
+                    <md-list-item class="md-3-line" ng-click="null">
                         <div class="md-list-item-text" layout="column">
                             <h3>Username: {{user.Customer_Full_Name}}</h3>
                         </div>
                     </md-list-item>
 
-                    <md-list-item class="md-3-line"  ng-click="null">
+                    <md-list-item class="md-3-line" ng-click="null">
                         <div class="md-list-item-text" layout="column">
                             <h3>NIC: {{user.NIC}}</h3>
                         </div>
                     </md-list-item>
 
-                    <md-list-item class="md-3-line"  ng-click="null">
+                    <md-list-item class="md-3-line" ng-click="null">
                         <div class="md-list-item-text" layout="column">
-                            <h3>Contact Number:  {{user.Contact_Number}}</h3>
+                            <h3>Contact Number: {{user.Contact_Number}}</h3>
                         </div>
                     </md-list-item>
 
-                    <md-list-item class="md-3-line"  ng-click="null">
+                    <md-list-item class="md-3-line" ng-click="null">
                         <div class="md-list-item-text" layout="column">
-                            <h3>Email:  {{user.Email}}</h3>
+                            <h3>Email: {{user.Email}}</h3>
                         </div>
                     </md-list-item>
                     </br>
-                    <tr >
+                    <tr>
                         <td>CART DETAILS:</td>
 
                         <td>
-                            <table >
-                                <tr  >
-                                    <th>ITEM</th>.
+                            <table>
+                                <tr>
+                                    <th>ITEM</th>
+                                    .
                                     <th>UNIT PRICE</th>
-                                    <th>QUANTITY</th>.
+                                    <th>QUANTITY</th>
+                                    .
                                     <th>Total</th>
                                 </tr>
 
-                                <tr ng-repeat = "item in allItems">
+                                <tr ng-repeat="item in allItems">
                                     <td>{{ item.name }}</td>
                                     <td>{{ item.unit_Price }}</td>
                                     <td>{{ item.selectedQuantity }}</td>
@@ -92,12 +91,12 @@
                     </tr>
 
                     </table>
-                    <md-list-item class="md-3-line"  ng-click="null">
+                    <md-list-item class="md-3-line" ng-click="null">
                         <div class="md-list-item-text" layout="column">
                             <h3>Total Price: {{totalPrice}}</h3>
                         </div>
                     </md-list-item>
-                    <md-list-item class="md-3-line"  ng-click="null">
+                    <md-list-item class="md-3-line" ng-click="null">
                         <div class="md-list-item-text" layout="column">
                             <h3>Total Price For Delivery:</h3>
                             <h3>{{distanceCal}}</h3>
@@ -105,10 +104,11 @@
                     </md-list-item>
 
 
+                    <div layout="row" ng-cloak md-theme="{{theme}}" class="container">
 
-                    <div layout="row" ng-cloak md-theme="{{theme}}" class="container" >
-
-                        <md-button  class="md-primary md-raised" ng-click="showConfirm($event)" style="background-color: darkgreen">ORDER NOW</md-button>
+                        <md-button class="md-primary md-raised" ng-click="showConfirm($event)"
+                                   style="background-color: darkgreen">ORDER NOW
+                        </md-button>
                     </div>
 
                 </md-card>
@@ -118,8 +118,6 @@
             </div>
 
             <!--->
-
-
 
 
 </md-content>

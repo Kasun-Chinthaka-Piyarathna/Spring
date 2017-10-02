@@ -1,10 +1,7 @@
-
-
 <md-dialog aria-label="ALL COMMENTS">
 
 
     <link rel="stylesheet" href="css/rating.css">
-
 
 
     <form ng-cloak>
@@ -33,7 +30,8 @@
                 <div flex>
                     <md-input-container flex>
                         <label style="color:white">Delivery Status</label>
-                        <input required name="DeliveryStatus" ng-model="filters.delivery_status" style="color: darkmagenta">
+                        <input required name="DeliveryStatus" ng-model="filters.delivery_status"
+                               style="color: darkmagenta">
                         <div ng-messages="filters.DeliveryStatus.$error">
                             <div ng-message="required">This is required.</div>
                         </div>
@@ -63,13 +61,13 @@
                 </md-radio-group>
 
                 <!--<div class="acidjs-rating-stars">-->
-                    <!--<form>-->
-                        <!--<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-0" value="50" /><label for="group-1-0"></label>&lt;!&ndash;-->
-                        <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-1" value="40" /><label for="group-1-1"></label>&lt;!&ndash;-->
-                        <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-2" value="30" /><label for="group-1-2"></label>&lt;!&ndash;-->
-                        <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-3" value="20" /><label for="group-1-3"></label>&lt;!&ndash;-->
-                        <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-4"  value="10" /><label for="group-1-4"></label>-->
-                    <!--</form>-->
+                <!--<form>-->
+                <!--<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-0" value="50" /><label for="group-1-0"></label>&lt;!&ndash;-->
+                <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-1" value="40" /><label for="group-1-1"></label>&lt;!&ndash;-->
+                <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-2" value="30" /><label for="group-1-2"></label>&lt;!&ndash;-->
+                <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-3" value="20" /><label for="group-1-3"></label>&lt;!&ndash;-->
+                <!--&ndash;&gt;<input ng-model="filters.ratingg" type="radio" name="group-1" id="group-1-4"  value="10" /><label for="group-1-4"></label>-->
+                <!--</form>-->
                 <!--</div>-->
             </div>
         </md-dialog-content>

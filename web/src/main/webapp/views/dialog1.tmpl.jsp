@@ -1,5 +1,3 @@
-
-
 <md-dialog aria-label="ALL COMMENTS">
     <form ng-cloak>
         <md-toolbar>
@@ -17,15 +15,17 @@
                 <h2>View All Comments</h2>
 
                 <div layout="column">
-                    <div  ng-repeat="comment in comments"  flex=""  >
-                        <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch  style="background-image:url(js/Lib/slider/images/food/c4.jpg) " >
+                    <div ng-repeat="comment in comments" flex="">
+                        <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch
+                                 style="background-image:url(js/Lib/slider/images/food/c4.jpg) ">
 
                             <md-card-title>
                                 <md-card-title-text>
                                     <span class="md-headline">{{comment.comment}}</span>
                                     <span class="md-subhead">Delivery_Status :{{comment.delivery_Status}}</span>
                                     <span class="md-subhead">Time_Status :{{comment.time_Status}}</span>
-                                    <span class="md-subhead" style="color:red ">Yummy_Online_ID :{{comment.customer_ID}}</span>
+                                    <span class="md-subhead"
+                                          style="color:red ">Yummy_Online_ID :{{comment.customer_ID}}</span>
                                 </md-card-title-text>
                             </md-card-title>
                         </md-card>
@@ -35,30 +35,27 @@
 
                 <!--<-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
                 <!--<md-list-item class="md-3-line" ng-repeat="comment in comments" ng-click="null">-->
-                    <!--&lt;!&ndash;<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />&ndash;&gt;-->
-                    <!--<div class="md-list-item-text" layout="column">-->
-                        <!--<h3>Delivery :  {{comment.Delivery_Status}}</h3>-->
-                        <!--<h4>Time : {{comment.Time_Status}}</h4>-->
-                        <!--<p>{{comment.Comment}}</p>-->
-                    <!--</div>-->
+                <!--&lt;!&ndash;<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />&ndash;&gt;-->
+                <!--<div class="md-list-item-text" layout="column">-->
+                <!--<h3>Delivery :  {{comment.Delivery_Status}}</h3>-->
+                <!--<h4>Time : {{comment.Time_Status}}</h4>-->
+                <!--<p>{{comment.Comment}}</p>-->
+                <!--</div>-->
                 <!--</md-list-item>-->
                 <!--<-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
 
 
                 <!--<md-list-item ng-repeat="comment in comments" class="md-3-line _md-button-wrap ng-scope _md md-clickable" ng-repeat="item in todos" role="listitem" tabindex="-1">-->
-                    <!--<div class="md-button md-no-style">-->
-                        <!--<div class="md-list-item-inner">-->
-                            <!--<div class="md-list-item-text layout-column" layout="column">-->
-                                <!--<h3 class="ng-binding">Delivery :  {{comment.Delivery_Status}}</h3>-->
-                                <!--<h4 class="ng-binding">Time : {{comment.Time_Status}}</h4>-->
-                                <!--<p class="ng-binding"> {{comment.Comment}}</p>-->
-                            <!--</div>-->
-                        <!--</div><div class="md-secondary-container"></div></div>-->
+                <!--<div class="md-button md-no-style">-->
+                <!--<div class="md-list-item-inner">-->
+                <!--<div class="md-list-item-text layout-column" layout="column">-->
+                <!--<h3 class="ng-binding">Delivery :  {{comment.Delivery_Status}}</h3>-->
+                <!--<h4 class="ng-binding">Time : {{comment.Time_Status}}</h4>-->
+                <!--<p class="ng-binding"> {{comment.Comment}}</p>-->
+                <!--</div>-->
+                <!--</div><div class="md-secondary-container"></div></div>-->
                 <!--</md-list-item>-->
             </div>
-
-
-
 
 
         </md-dialog-content>

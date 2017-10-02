@@ -1,6 +1,7 @@
+
 <md-content>
 
-    <div class ="register">
+    <div class="register">
 
 
         <style>
@@ -34,22 +35,24 @@
             <div flex>
                 <div layout="column">
 
-                        <div flex>
-                            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch  style="background-image:url(js/Lib/slider/images/food/bg2.jpg) ">
-                                <md-card-title>
-                                    <md-card-title-text>
-                                        <span class="md-headline" style="color: #ffffff">CUSTOMER SIGN IN</span>
-                                        <span class="md-subhead" style="color: #ffffff">Yummy</span>
-                                    </md-card-title-text>
+                    <div flex>
+                        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch
+                                 style="background-image:url(js/Lib/slider/images/food/bg2.jpg) ">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline" style="color: #ffffff">CUSTOMER SIGN IN</span>
+                                    <span class="md-subhead" style="color: #ffffff">Yummy</span>
+                                </md-card-title-text>
 
-                                </md-card-title>
-                            </md-card>
-                        </div>
+                            </md-card-title>
+                        </md-card>
+                    </div>
 
                     <form name="lform">
                         <md-input-container md-no-float class="md-block">
                             <label style="color:#ffffff;">User Name</label>
-                            <input required name="lname" ng-model="filters.logusername" type="text"  style="color:#ffffff;">
+                            <input required name="lname" ng-model="filters.logusername" type="text"
+                                   style="color:#ffffff;">
                             <div required ng-messages="lform.lname.$error">
                                 <div ng-message="required">This is required.</div>
                             </div>
@@ -57,113 +60,114 @@
 
                         <md-input-container md-no-float class="md-block">
                             <label style="color:#ffffff;">Password</label>
-                            <input required name="pswd" ng-model="filters.logpwd" type="password"  style="color:#ffffff;">
+                            <input required name="pswd" ng-model="filters.logpwd" type="password"
+                                   style="color:#ffffff;">
                             <div required ng-messages="lform.pswd.$error">
                                 <div ng-message="required">This is required.</div>
                             </div>
                         </md-input-container>
 
-                    <div flex>
-                        <md-button ng-click="SignIn()" class="md-raised md-primary">Log In</md-button>
-                    </div>
+                        <div flex>
+                            <md-button ng-click="SignIn()" class="md-raised md-primary">Log In</md-button>
+                        </div>
                     </form>
                 </div>
                 {{signinmessage}}
             </div>
 
 
-
-
+            <div flex>
                 <div flex>
+                    <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch
+                             style="background-image:url(js/Lib/slider/images/food/bg2.jpg) ">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline" style="color: #ffffff">CUSTOMER SIGN UP</span>
+                                <span class="md-subhead" style="color: #ffffff">create your personal account</span>
+                            </md-card-title-text>
+
+                        </md-card-title>
+                    </md-card>
+                </div>
+
+
+                <form name="nform">
+
+
+                    <md-input-container md-no-float class="md-block">
+
+                        <label style="color:#ffffff;">Full Name</label>
+                        <input required name="cName" ng-model="filters.cname" type="text" minlength="5" maxlength="30"
+                               style="color:#ffffff;">
+
+                        <div required ng-messages="nform.cName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+
+                    </md-input-container>
+
+                    <md-input-container md-no-float class="md-block">
+                        <label style="color:#ffffff;">Phone Number</label>
+                        <input required name="phone" ng-model="filters.phone" type="number" minlength="10"
+                               maxlength="10" style="color:#ffffff;">
+
+                        <div required ng-messages="nform.phone.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <!-- Use floating placeholder instead of label -->
+                        <label style="color:#ffffff;">Email</label>
+                        <input required name="email" ng-model="filters.email" type="email" ng-required="true"
+                               style="color:#ffffff;">
+
+                        <div required ng-messages="nform.email.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container md-no-float class="md-block">
+                        <label style="color:#ffffff;">NIC Number</label>
+                        <input required name="nic" ng-model="filters.nic" minlength="10" maxlength="10" type="text"
+                               style="color:#ffffff;">
+
+                        <div required ng-messages="nform.nic.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container md-no-float class="md-block">
+                        <label style="color:#ffffff;">User Name</label>
+                        <input required name="uName" ng-model="filters.username" minlength="3" maxlength="20"
+                               type="text" style="color:#ffffff;">
+
+                        <div required ng-messages="nform.uName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container md-no-float class="md-block">
+                        <label style="color:#ffffff;">Password</label>
+                        <input required name="ps" ng-model="filters.pwd" minlength="5" maxlength="20" type="password"
+                               style="color:#ffffff;">
+
+                        <div required ng-messages="nform.ps.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+
                     <div flex>
-                        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch  style="background-image:url(js/Lib/slider/images/food/bg2.jpg) ">
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline" style="color: #ffffff">CUSTOMER SIGN UP</span>
-                                    <span class="md-subhead" style="color: #ffffff">create your personal account</span>
-                                </md-card-title-text>
-
-                            </md-card-title>
-                        </md-card>
+                        <md-button ng-click="SignUp()" class="md-raised md-primary">SIGN UP</md-button>
                     </div>
 
 
+                </form>
 
-                    <form name="nform">
-
-
-
-
-                <md-input-container md-no-float class="md-block">
-
-                    <label style="color:#ffffff;">Full Name</label>
-                    <input required name="cName" ng-model="filters.cname" type="text" minlength="5" maxlength="30"  style="color:#ffffff;" >
-
-                    <div required ng-messages="nform.cName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-
-                </md-input-container>
-
-                <md-input-container md-no-float class="md-block">
-                    <label style="color:#ffffff;">Phone Number</label>
-                    <input required name="phone" ng-model="filters.phone" type="number" minlength="10" maxlength="10" style="color:#ffffff;">
-
-                    <div required ng-messages="nform.phone.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-
-                <md-input-container class="md-block">
-                    <!-- Use floating placeholder instead of label -->
-                    <label style="color:#ffffff;">Email</label>
-                    <input required name="email" ng-model="filters.email" type="email"  ng-required="true" style="color:#ffffff;">
-
-                    <div required ng-messages="nform.email.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-
-                <md-input-container md-no-float class="md-block">
-                    <label style="color:#ffffff;">NIC Number</label>
-                    <input required name="nic" ng-model="filters.nic" minlength="10" maxlength="10" type="text" style="color:#ffffff;">
-
-                    <div required ng-messages="nform.nic.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-
-                <md-input-container md-no-float class="md-block">
-                    <label style="color:#ffffff;">User Name</label>
-                    <input required name="uName" ng-model="filters.username" minlength="3" maxlength="20"  type="text" style="color:#ffffff;">
-
-                    <div required ng-messages="nform.uName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-
-                <md-input-container md-no-float class="md-block">
-                    <label style="color:#ffffff;">Password</label>
-                    <input required name="ps" ng-model="filters.pwd" minlength="5" maxlength="20" type="password" style="color:#ffffff;">
-
-                    <div required ng-messages="nform.ps.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-
-                <div flex>
-                    <md-button ng-click="SignUp()" class="md-raised md-primary">SIGN UP</md-button>
-                </div>
-
-
-                    </form>
-
-                </div>
+            </div>
 
         </div>
 
 
-
-
-</div>
+    </div>
 </md-content>

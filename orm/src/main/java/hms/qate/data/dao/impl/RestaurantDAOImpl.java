@@ -34,15 +34,14 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
     }
 
 
-
     @SuppressWarnings("rawtypes")
     @Override
     public List<Restaurant> getAllRestaurants() {
         Session session = getSession();
         List<Restaurant> restaurantObjects = session.createCriteria(Restaurant.class).list();
-        System.out.println("###########################"+ session.createCriteria(Restaurant.class).list());
+        System.out.println("###########################" + session.createCriteria(Restaurant.class).list());
 
-        System.out.println("printing restaurant objects " +restaurantObjects);
+        System.out.println("printing restaurant objects " + restaurantObjects);
 
         System.out.println("********************** " + restaurantObjects);
         return restaurantObjects;
@@ -53,22 +52,13 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
     public List<Restaurant> getAllRestaurants2(String res_name) {
 
 
-
         Session session = getSession();
         Query query = session.createQuery("from Restaurant where Restaurant_Name = :code ");
-        query.setParameter("code",res_name);
+        query.setParameter("code", res_name);
         List restaurantObjects2 = query.list();
-        return  restaurantObjects2;
+        return restaurantObjects2;
 
-//
-//        Session session = getSession();
-//        List<Restaurant> restaurantObjects2 = session.createCriteria(Restaurant.class).list();
-//        System.out.println("###########################"+ session.createCriteria(Restaurant.class).list());
-//
-//        System.out.println("printing restaurant objects/ filter:Restaurant Name " +restaurantObjects2);
-//
-//        System.out.println("**********************filter:Restaurant Name  " + restaurantObjects2);
-//        return restaurantObjects2;
+
     }
 
     @SuppressWarnings("rawtypes")
@@ -78,10 +68,9 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
         Query query3 = session3.createQuery("from Restaurant where NearestCity = :code ");
         query3.setParameter("code", nearest_city);
         List restaurantObjects3 = query3.list();
-        return  restaurantObjects3;
+        return restaurantObjects3;
 
     }
-
 
 
     @SuppressWarnings("rawtypes")
@@ -122,17 +111,15 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
     }
 
 
-
-
     @SuppressWarnings("rawtypes")
     @Override
-    public List<Restaurant> restaurant_signup(String res_name,String password) {
+    public List<Restaurant> restaurant_signup(String res_name, String password) {
         Session session3 = getSession();
         Query query3 = session3.createQuery("from Restaurant where RUsername = :input1 and Password = :input2");
         query3.setParameter("input1", res_name);
         query3.setParameter("input2", password);
         List restaurantObjects3 = query3.list();
-        return  restaurantObjects3;
+        return restaurantObjects3;
 
     }
 
@@ -144,10 +131,9 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
         Query query3 = session3.createQuery("from food_items where Restaurant_ID = :code ");
         query3.setParameter("code", Restaurant_ID);
         List restaurantObjects3 = query3.list();
-        return  restaurantObjects3;
+        return restaurantObjects3;
 
     }
-
 
 
     @SuppressWarnings("rawtypes")
@@ -157,23 +143,20 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
         Query query3 = session3.createQuery("from reviews where restaurant_ID = :code ");
         query3.setParameter("code", rid);
         List restaurantObjects3 = query3.list();
-        return  restaurantObjects3;
+        return restaurantObjects3;
 
     }
-
-
-
 
 
     @SuppressWarnings("rawtypes")
     @Override
     public int AddComments(
-          int rid,
-          int cid,
-          String comment,
-          int rating,
-          String delivery_status,
-          String time_status
+            int rid,
+            int cid,
+            String comment,
+            int rating,
+            String delivery_status,
+            String time_status
     ) {
 
 
@@ -195,15 +178,6 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
 
 
     }
-
-
-
-
-
-
-
-
-
 
 
 }

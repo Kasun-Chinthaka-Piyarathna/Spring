@@ -1,6 +1,6 @@
 <md-content>
 
-    <div class ="rating">
+    <div class="rating">
 
         <style>
             .rating {

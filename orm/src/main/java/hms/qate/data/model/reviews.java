@@ -6,9 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @author Ranga Reddy
- * @version 1.0
- *
+ * Created by chinthaka on 9/29/17.
  */
 @Entity
 @Table(name = "reviews")
@@ -30,62 +28,72 @@ public class reviews implements Serializable {
     @Column
     private int rating;
     @Column
-    private String  comment;
+    private String comment;
     @Column
-    private String  delivery_Status;
+    private String delivery_Status;
     @Column
-    private String  time_Status;
-
-
+    private String time_Status;
 
 
     public reviews() {
     }
+
     public int getView_ID() {
         return view_ID;
     }
+
     public void setView_ID(int view_ID) {
 
         this.view_ID = view_ID;
     }
-    public int getCustomer_ID(){
+
+    public int getCustomer_ID() {
         return customer_ID;
     }
-    public void setCustomer_ID(int customer_ID){
+
+    public void setCustomer_ID(int customer_ID) {
         this.customer_ID = customer_ID;
     }
-    public int getRestaurant_ID(){
+
+    public int getRestaurant_ID() {
         return restaurant_ID;
     }
-    public void setRestaurant_ID(int restaurant_ID){
+
+    public void setRestaurant_ID(int restaurant_ID) {
         this.restaurant_ID = restaurant_ID;
     }
-    public int getRating(){
+
+    public int getRating() {
         return rating;
     }
-    public void setRating(int rating){
+
+    public void setRating(int rating) {
         this.rating = rating;
     }
-    public String getComment(){
+
+    public String getComment() {
         return comment;
     }
-    public void setComment(String comment){
+
+    public void setComment(String comment) {
         this.comment = comment;
     }
-    public String getDelivery_Status(){
+
+    public String getDelivery_Status() {
         return delivery_Status;
     }
-    public void setDelivery_Status(String delivery_Status){
+
+    public void setDelivery_Status(String delivery_Status) {
         this.delivery_Status = delivery_Status;
     }
 
-    public String getTime_Status(){
+    public String getTime_Status() {
         return time_Status;
     }
-    public void setTime_Status(String time_Status){
+
+    public void setTime_Status(String time_Status) {
         this.time_Status = time_Status;
     }
-
 
 
 }

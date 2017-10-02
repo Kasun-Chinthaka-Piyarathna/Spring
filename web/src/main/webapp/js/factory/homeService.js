@@ -1,6 +1,11 @@
 (function () {
     'use strict';
 
+    /**
+     * Created by chinthaka on 9/29/17.
+     */
+
+
     angular
         .module('yummy')
         .factory('homeService', homeService);
@@ -16,28 +21,29 @@
             getRestaurantsByFoodAndCity: getRestaurantsByFoodAndCity,
             getRestaurantsByName: getRestaurantsByName,
             getRestaurantsByLocation: getRestaurantsByLocation,
-            searchRestaurantsByName : searchRestaurantsByName
+            searchRestaurantsByName: searchRestaurantsByName
         };
 
         return service;
 
 
         function getRestaurantsByFoodAndCity(filters) {
-            return $http.get(webApi + 'restaurant/foodWise?fo='+filters.foodName +'&ci='+filters.location).then(handleSuccess, handleError('Error getting drivers'));
+            return $http.get(webApi + 'restaurant/foodWise?fo=' + filters.foodName + '&ci=' + filters.location).then(handleSuccess, handleError('Error getting drivers'));
         }
 
         function getRestaurantsByName(filters) {
-            return $http.post(webApi + 'restaurant/restaurantwise?res='+filters.restaurantName).then(handleSuccess, handleError('Error getting single driver'));
+            return $http.post(webApi + 'restaurant/restaurantwise?res=' + filters.restaurantName).then(handleSuccess, handleError('Error getting single driver'));
         }
 
         function getRestaurantsByLocation(filters) {
-            return $http.post(webApi + 'restaurant/locationwise?loc='+filters.nearestCity ).then(handleSuccess, handleError('Error getting single driver'));
+            return $http.post(webApi + 'restaurant/locationwise?loc=' + filters.nearestCity).then(handleSuccess, handleError('Error getting single driver'));
         }
 
 
         function name1(filters) {
             return $http.get(webApi + 'api/drivers?id=' + driver.id).then(handleSuccess, handleError('Error getting single driver'));
         }
+
         function name2(filters) {
             return $http.get(webApi + 'api/drivers?id=' + driver.id).then(handleSuccess, handleError('Error getting single driver'));
         }
@@ -54,13 +60,10 @@
 
         function handleError(error) {
             return function () {
-                return { success: false, message: error };
+                return {success: false, message: error};
             };
         }
     }
-
-
-
 
 
 })();

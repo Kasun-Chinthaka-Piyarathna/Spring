@@ -3,9 +3,6 @@
  */
 package hms.qate.data.dao.impl;
 
-//import com.ranga.dao.EmployeeDAO;
-//import com.ranga.entity.Employee;
-//import com.ranga.util.HibernateUtil;
 
 
 import hms.qate.data.model.Employee;
@@ -21,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Ranga Reddy
- * @version 1.0
+ * Created by chinthaka on 9/29/17.
  */
 
 @Repository

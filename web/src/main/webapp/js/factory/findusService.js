@@ -1,5 +1,5 @@
 /**
- * Created by Kasun Chinthaka on 1/25/2017.
+ * Created by chinthaka on 9/29/17.
  */
 (function () {
     'use strict';
@@ -7,12 +7,12 @@
     angular
         .module('yummy')
         .factory('findusService', findusService)
-    .config(function ($mdThemingProvider) {
-        $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
-        $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
-        $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
-        $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
-    });
+        .config(function ($mdThemingProvider) {
+            $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
+            $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
+            $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
+            $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
+        });
 
     findusService.$inject = ['$http'];
 
@@ -25,12 +25,11 @@
             getRestaurantsByFoodAndCity: getRestaurantsByFoodAndCity,
             getRestaurantsByName: getRestaurantsByName,
             getRestaurantsByLocation: getRestaurantsByLocation,
-            getAllFood_Items:getAllFood_Items,
+            getAllFood_Items: getAllFood_Items,
 
         };
 
         return service;
-
 
 
         function getRestaurantsByFoodAndCity(filters) {

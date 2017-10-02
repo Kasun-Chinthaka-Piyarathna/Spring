@@ -7,7 +7,7 @@ import hms.qate.data.model.reviews;
 import java.util.List;
 
 /**
- * Created by chinthaka on 9/27/17.
+ * Created by chinthaka on 9/29/17.
  */
 public interface RestaurantService {
     public List<Restaurant> getAllRestaurants();

@@ -1,3 +1,7 @@
+/**
+ * Created by chinthaka on 9/29/17.
+ */
+
 var app = angular.module('yummy', [
     'ngRoute',
     'ngMaterial',
@@ -9,8 +13,6 @@ var app = angular.module('yummy', [
     'ngMap',
     'ngAnimate',
 ]);
-
-
 
 
 app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
@@ -65,12 +67,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
                 rrr: undefined
             }
         })
-        .state('customerRegister',{
-            templateUrl:'views/customerRegister.jsp',
-            controller:'customerRegisterController',
-            url:'/customerRegister',
-            params:{
-                rest:undefined
+        .state('customerRegister', {
+            templateUrl: 'views/customerRegister.jsp',
+            controller: 'customerRegisterController',
+            url: '/customerRegister',
+            params: {
+                rest: undefined
             }
         })
 
@@ -80,31 +82,28 @@ app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 
 app.run(function ($rootScope) {
     $rootScope.signOut = function () {
-        $rootScope.loggedIn = false ;
-        localStorage.setItem("userName" , null);
+        $rootScope.loggedIn = false;
+        localStorage.setItem("userName", null);
     };
 
     var user = localStorage.getItem("userName");
     var CARTITEM = localStorage.getItem("CARTITEM");
 
 
-
-    if(user!= undefined){
-        if(user!=null){
-            if(user!="null"){
+    if (user != undefined) {
+        if (user != null) {
+            if (user != "null") {
 
                 $rootScope.user = JSON.parse(user);
-                $rootScope.loggedIn = true ;
+                $rootScope.loggedIn = true;
             }
         }
     }
 
 
-
-
-    if(CARTITEM!= undefined){
-        if(CARTITEM!=null){
-            if(CARTITEM !="null"){
+    if (CARTITEM != undefined) {
+        if (CARTITEM != null) {
+            if (CARTITEM != "null") {
 
                 $rootScope.allItems = JSON.parse(CARTITEM);
 

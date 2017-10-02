@@ -6,11 +6,11 @@ import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.util.List;
+
 import org.hibernate.SessionFactory;
 
 /**
- * @author Ranga Reddy
- * @version 1.0
+ * Created by chinthaka on 9/29/17.
  */
 @Repository
 public class HibernateUtil {
@@ -52,7 +52,7 @@ public class HibernateUtil {
     @SuppressWarnings("rawtypes")
     public <T> List fetchAll(String query) {
 
-        return  sessionFactory.getCurrentSession().createQuery(query).list();
+        return sessionFactory.getCurrentSession().createQuery(query).list();
     }
 
     @SuppressWarnings("unchecked")
@@ -61,8 +61,7 @@ public class HibernateUtil {
     }
 
 
-
-    }
+}
 
 //    public static SessionFactory getSessionFactory() {
 //        return sessionFactory;

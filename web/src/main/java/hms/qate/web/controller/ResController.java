@@ -18,6 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
+/**
+ * Created by chinthaka on 9/29/17.
+ */
+
 @Controller
 @RequestMapping("/restaurant")
 class ResController {
@@ -27,11 +31,7 @@ class ResController {
 
     @Autowired
     private RestaurantService restaurantService;
-//    @Autowired
-//    private CustomerService customerService;
 
-
-    //Return JsonObject in spring restful webservice
     @RequestMapping(value = "/service")
     @ResponseBody
     public String SayHello2Me(HttpServletRequest request) throws Exception {
@@ -96,6 +96,7 @@ class ResController {
 
 
     }
+
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public String GettingRestaurants4(@RequestParam("rname") final String restaurant_Name,
@@ -113,14 +114,12 @@ class ResController {
     ) throws org.json.simple.parser.ParseException {
 
         logger.info("Restaurants Register*************");
-        int rawaffected2  = restaurantService.register(restaurant_Name,username,password,order_facility,email,contact,city,food_items,location,image);
+        int rawaffected2 = restaurantService.register(restaurant_Name, username, password, order_facility, email, contact, city, food_items, location, image);
         String rawaffected_string2 = String.valueOf(rawaffected2);
         return rawaffected_string2;
 
 
     }
-
-
 
 
     @RequestMapping(value = "/restaurant_signup", method = RequestMethod.POST)
@@ -129,7 +128,7 @@ class ResController {
                          @RequestParam("pwd") final String password) throws org.json.simple.parser.ParseException {
 
         logger.info("Getting the all Restaurants. /filter: Nearest_city");
-        List<Restaurant> list3 = restaurantService.restaurant_signup(res_name,password);
+        List<Restaurant> list3 = restaurantService.restaurant_signup(res_name, password);
         String signedup_restaurant_s = new Gson().toJson(list3);
         JSONParser parser3 = new JSONParser();
         JSONArray signedup_restaurant = (JSONArray) parser3.parse(signedup_restaurant_s);
@@ -139,8 +138,6 @@ class ResController {
 
 
     }
-
-
 
 
     @RequestMapping(value = "/food_items", method = RequestMethod.POST)
@@ -158,7 +155,6 @@ class ResController {
 
 
     }
-
 
 
     @RequestMapping(value = "/view_comments", method = RequestMethod.POST)
@@ -188,15 +184,13 @@ class ResController {
                               @RequestParam("time_status") final String time_status) throws org.json.simple.parser.ParseException {
 
         logger.info("Getting the all food_items ");
-        int amount_of_rows = restaurantService.AddComments(rid,cid,comment,rating,delivery_status,time_status);
+        int amount_of_rows = restaurantService.AddComments(rid, cid, comment, rating, delivery_status, time_status);
 
         String amount_of_rows_now = String.valueOf(amount_of_rows);
         return amount_of_rows_now;
 
 
-
     }
-
 
 
 }

@@ -1,8 +1,6 @@
 package hms.qate.service.impl;
 
-//import com.ranga.dao.EmployeeDAO;
-//import com.ranga.entity.Employee;
-//import com.ranga.service.EmployeeService;
+
 
 
 import hms.qate.data.model.*;
@@ -19,8 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * @author Ranga Reddy
- * @version 1.0
+ * Created by chinthaka on 9/29/17.
  */
 @Service
 @Transactional

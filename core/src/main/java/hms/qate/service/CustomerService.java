@@ -10,8 +10,7 @@ import java.util.List;
  */
 public interface CustomerService {
 
-        public List<Customer> signIn(String  username, String password);
-
+    public List<Customer> signIn(String username, String password);
 
 
     public int signUp(String Contact_Number,
@@ -20,8 +19,6 @@ public interface CustomerService {
                       String NIC,
                       String Password,
                       String Username);
-
-
 
 
 }

@@ -6,9 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @author Ranga Reddy
- * @version 1.0
- *
+ * Created by chinthaka on 9/29/17.
  */
 @Entity
 @Table(name = "Restaurant")
@@ -43,52 +41,68 @@ public class Restaurant implements Serializable {
 
     public Restaurant() {
     }
+
     public int getRestaurant_ID() {
-        System.out.println("dddddddddddddd"+Restaurant_ID);
+        System.out.println("dddddddddddddd" + Restaurant_ID);
         return Restaurant_ID;
     }
+
     public void setRestaurant_ID(int Restaurant_ID) {
         this.Restaurant_ID = Restaurant_ID;
     }
+
     public String getRestaurant_Name() {
         return Restaurant_Name;
     }
+
     public void setRestaurant_Name(String Restaurant_Name) {
         this.Restaurant_Name = Restaurant_Name;
     }
+
     public String getRUsername() {
         return RUsername;
     }
+
     public void setRUsername(String RUsername) {
         this.RUsername = RUsername;
     }
+
     public String getPassword() {
         return Password;
     }
+
     public void setPassword(String Password) {
         this.Password = Password;
     }
+
     public String getOFacility() {
         return OFacility;
     }
+
     public void setOFacility(String OFacility) {
         this.OFacility = OFacility;
     }
+
     public String getEmail() {
         return Email;
     }
+
     public void setEmail(String Email) {
         this.Email = Email;
     }
+
     public String getNearestCity() {
         return NearestCity;
     }
+
     public void setNearestCity(String NearestCity) {
         this.NearestCity = NearestCity;
     }
+
     public String getLocation() {
         return Location;
     }
+
     public void setLocation(String Location) {
         this.Location = Location;
     }
@@ -96,13 +110,10 @@ public class Restaurant implements Serializable {
     public String getRImage() {
         return RImage;
     }
+
     public void setRImage(String RImage) {
         this.RImage = RImage;
     }
-
-
-
-
 
 
     @Override
@@ -110,21 +121,18 @@ public class Restaurant implements Serializable {
 
 
         JSONObject restaurant = new JSONObject();
-        restaurant.put("Restaurant_ID",Restaurant_ID);
-        restaurant.put("Restaurant_Name",Restaurant_Name);
-        restaurant.put("RUsername",RUsername);
-        restaurant.put("Password",Password);
-        restaurant.put("OFacility",OFacility);
-        restaurant.put("Email",Email);
-        restaurant.put("NearestCity",NearestCity);
-        restaurant.put("Location",Location);
-        restaurant.put("RImage",RImage);
+        restaurant.put("Restaurant_ID", Restaurant_ID);
+        restaurant.put("Restaurant_Name", Restaurant_Name);
+        restaurant.put("RUsername", RUsername);
+        restaurant.put("Password", Password);
+        restaurant.put("OFacility", OFacility);
+        restaurant.put("Email", Email);
+        restaurant.put("NearestCity", NearestCity);
+        restaurant.put("Location", Location);
+        restaurant.put("RImage", RImage);
 
 
         String restaurant2 = String.valueOf(restaurant);
-
-
-
 
 
         return restaurant2;

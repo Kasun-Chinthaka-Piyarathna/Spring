@@ -34,11 +34,9 @@
     <script type="text/javascript" src="js/Lib/angular-ng-map/ng-map.min.js"></script>
 
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.3/angular-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/9.0.9/ng-file-upload.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvG-nk14_twDKblH36gf9sFFrt9yDhGH4&libraries=places"></script>
-
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-touch.min.js"></script>
@@ -46,9 +44,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/Lib/slider/js/modernizr.custom.63321.js"></script>
     <script src="js/Lib/slider/js/jquery.catslider.js"></script>
-
-
-
 
 
     <!-- controllers -->
@@ -63,7 +58,6 @@
     <script src="js/controllers/customerRegisterController.js"></script>
 
 
-
     <!-- services -->
     <script src="js/factory/homeService.js"></script>
     <script src="js/factory/registerService.js"></script>
@@ -75,39 +69,48 @@
     <script src="js/factory/customerRegisterService.js"></script>
 
 
-
 </head>
 
-<body ng-app="yummy" >
+<body ng-app="yummy">
 
 
-
-<div  ng-cloak >
-    <md-content  class="md-padding" style="background-image:url(js/Lib/slider/images/food/bg1.jpg) ">
+<div ng-cloak>
+    <md-content class="md-padding" style="background-image:url(js/Lib/slider/images/food/bg1.jpg) ">
 
 
         <!-- Navigation Bar -->
-        <md-nav-bar background-color="red "border-style="solid" md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
-            <md-nav-item ui-sref="home" md-nav-click="home" name="page1"><h4 style="color:#D0D3D4">home</h4></md-nav-item>
+        <md-nav-bar background-color="red " border-style="solid" md-selected-nav-item="currentNavItem"
+                    nav-bar-aria-label="navigation links">
+            <md-nav-item ui-sref="home" md-nav-click="home" name="page1"><h4 style="color:#D0D3D4">home</h4>
+            </md-nav-item>
 
-            <md-nav-item  ui-sref="restaurant" md-nav-click="restaurant" name="restaurant"><h4 style="color:#D0D3D4">Restuarents</h4></md-nav-item>
+            <md-nav-item ui-sref="restaurant" md-nav-click="restaurant" name="restaurant"><h4 style="color:#D0D3D4">
+                Restuarents</h4></md-nav-item>
             <!--<md-nav-item ui-sref="rating" md-nav-click="rating" name="page3">Rating</md-nav-item>-->
             <!--<md-nav-item ui-sref="findus" md-nav-click="findus" name="page4">FindUs</md-nav-item>-->
             <!--<md-nav-item ui-sref="register" md-nav-click="register" name="page5">Restaurant</md-nav-item>-->
             <!--<md-nav-item ui-sref="order" md-nav-click="order" name="page6">Order Now</md-nav-item>-->
 
 
-                <md-button  ui-sref="register" md-nav-click="register" layout-align="end" class="md-raised md-primary" style="background-color:#3498DB">Register Restaurant</md-button>
-                <md-button  ui-sref="customerRegister" md-nav-click="customerRegister" layout-align="end" class="md-raised md-primary" style="background-color:#3498DB">SignIn</md-button>
+            <md-button ui-sref="register" md-nav-click="register" layout-align="end" class="md-raised md-primary"
+                       style="background-color:#3498DB">Register Restaurant
+            </md-button>
+            <md-button ui-sref="customerRegister" md-nav-click="customerRegister" layout-align="end"
+                       class="md-raised md-primary" style="background-color:#3498DB">SignIn
+            </md-button>
 
 
-             <!-- <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">Show as List</md-button>-->
+            <!-- <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">Show as List</md-button>-->
 
             <!-- user cart items -->
 
-            <md-nav-item style="float:right;" ng-show="loggedIn" md-nav-click="aboutus" name="page6" style="background-color: blue"><p style="color: #ffffff" >Logged In As User : {{user.Customer_Full_Name}}</p></md-nav-item>
-            <md-nav-item style="float:right;color:#ffffff;" ng-show="loggedIn" ui-sref="order" md-nav-click="aboutus" name="page6" ><p style="color: #ffffff">Cart</p> </md-nav-item>
-            <md-nav-item style="float:right;" ng-show="loggedIn" ng-click="signOut()" md-nav-click="aboutus" name="page6" ><p  style="color: #ffffff" >Sign Out</p> </md-nav-item>
+            <md-nav-item style="float:right;" ng-show="loggedIn" md-nav-click="aboutus" name="page6"
+                         style="background-color: blue"><p style="color: #ffffff">Logged In As User :
+                {{user.Customer_Full_Name}}</p></md-nav-item>
+            <md-nav-item style="float:right;color:#ffffff;" ng-show="loggedIn" ui-sref="order" md-nav-click="aboutus"
+                         name="page6"><p style="color: #ffffff">Cart</p></md-nav-item>
+            <md-nav-item style="float:right;" ng-show="loggedIn" ng-click="signOut()" md-nav-click="aboutus"
+                         name="page6"><p style="color: #ffffff">Sign Out</p></md-nav-item>
 
         </md-nav-bar>
         <div class="ext-content">

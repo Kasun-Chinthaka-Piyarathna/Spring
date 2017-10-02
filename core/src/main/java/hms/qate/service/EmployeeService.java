@@ -11,9 +11,9 @@ import java.io.Console;
 import java.util.List;
 
 /**
- * @author Ranga Reddy
- * @version 1.0
+ * Created by chinthaka on 9/29/17.
  */
+
 public interface EmployeeService {
 	public long createEmployee(Employee employee);
     public Employee updateEmployee(Employee employee);

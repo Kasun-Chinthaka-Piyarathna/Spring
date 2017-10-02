@@ -1,5 +1,5 @@
 /**
- * Created by Kasun Chinthaka on 1/25/2017.
+ * Created by chinthaka on 9/29/17.
  */
 (function () {
     'use strict';
@@ -22,19 +22,19 @@
 
 
         var service = {
-            SendOrderDetailsToDatabase : SendOrderDetailsToDatabase,
-            sendCartDetails : sendCartDetails
+            SendOrderDetailsToDatabase: SendOrderDetailsToDatabase,
+            sendCartDetails: sendCartDetails
         };
 
         return service;
 
         function SendOrderDetailsToDatabase(filters) {
-            return $http.get(webApi + 'foodservice/order?rid='+filters.rid + '&cid=' + filters.cid + + '&dc=' + filters.allitems + + '&op=' + filters.totalPrice + + '&cartid=' + filters.email ).then(handleSuccess, handleError('Error getting single driver'));
+            return $http.get(webApi + 'foodservice/order?rid=' + filters.rid + '&cid=' + filters.cid + +'&dc=' + filters.allitems + +'&op=' + filters.totalPrice + +'&cartid=' + filters.email).then(handleSuccess, handleError('Error getting single driver'));
         }
 
 
-        function sendCartDetails( allItems,savedRestaurant,user) {
-            return $http.get(webApi + 'foodservice/shoppingcart?rid='+savedRestaurant.Restaurant_ID + '&cid=' + user.Customer_ID +  '&item=' + allItems).then(handleSuccess, handleError('Error getting single driver'));
+        function sendCartDetails(allItems, savedRestaurant, user) {
+            return $http.get(webApi + 'foodservice/shoppingcart?rid=' + savedRestaurant.Restaurant_ID + '&cid=' + user.Customer_ID + '&item=' + allItems).then(handleSuccess, handleError('Error getting single driver'));
         }
 
         // function sendOrder(data) {

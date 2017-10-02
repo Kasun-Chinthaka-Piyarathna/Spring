@@ -11,8 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author Ranga Reddy
- * @version 1.0
+ * Created by chinthaka on 9/29/17.
  */
 @Repository
 public class HibernateUtil2 {
