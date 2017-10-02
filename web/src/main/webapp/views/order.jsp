@@ -80,10 +80,10 @@
                                 </tr>
 
                                 <tr ng-repeat = "item in allItems">
-                                    <td>{{ item.Name }}</td>
-                                    <td>{{ item.Unit_Price }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.unit_Price }}</td>
                                     <td>{{ item.selectedQuantity }}</td>
-                                    <td>{{ item.Unit_Price * item.selectedQuantity }}</td>
+                                    <td>{{ item.unit_Price * item.selectedQuantity }}</td>
                                 </tr>
 
                             </table>

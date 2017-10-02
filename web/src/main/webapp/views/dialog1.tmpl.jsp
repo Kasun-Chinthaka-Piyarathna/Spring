@@ -22,10 +22,10 @@
 
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-headline">{{comment.CommentData[0].Comment}}</span>
-                                    <span class="md-subhead">Delivery_Status :{{comment.CommentData[0].Delivery_Status}}</span>
-                                    <span class="md-subhead">Time_Status :{{comment.CommentData[0].Time_Status}}</span>
-                                    <span class="md-subhead" style="color:red ">Yummy_Online_ID :{{comment.Customer_ID}}</span>
+                                    <span class="md-headline">{{comment.comment}}</span>
+                                    <span class="md-subhead">Delivery_Status :{{comment.delivery_Status}}</span>
+                                    <span class="md-subhead">Time_Status :{{comment.time_Status}}</span>
+                                    <span class="md-subhead" style="color:red ">Yummy_Online_ID :{{comment.customer_ID}}</span>
                                 </md-card-title-text>
                             </md-card-title>
                         </md-card>

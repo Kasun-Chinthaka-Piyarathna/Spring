@@ -78,88 +78,88 @@
             <!--End Slider-->
 
 
-            <!--search restaurants according to the food item name and the current city -->
-            <div layout="row">
-                <div flex>
-                    <div layout="row">
-                        <hide-md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch >
-                            <md-card-title>
-                                <md-card-title-text>
-                                    <span class="md-headline" style="color:#00ff00">Search By Favourite Food</span>
-                                    <span class="md-subhead" style="color:#00ff00">Yummy</span>
-                                </md-card-title-text>
+            <%--<!--search restaurants according to the food item name and the current city -->--%>
+            <%--<div layout="row">--%>
+                <%--<div flex>--%>
+                    <%--<div layout="row">--%>
+                        <%--<hide-md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch >--%>
+                            <%--<md-card-title>--%>
+                                <%--<md-card-title-text>--%>
+                                    <%--<span class="md-headline" style="color:#00ff00">Search By Favourite Food</span>--%>
+                                    <%--<span class="md-subhead" style="color:#00ff00">Yummy</span>--%>
+                                <%--</md-card-title-text>--%>
 
-                    </div>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <%--</div>--%>
+                    <%--<br/>--%>
+                    <%--<br/>--%>
+                    <%--<br/>--%>
 
-                    <div layout="row">
+                    <%--<div layout="row">--%>
 
-                        <a href="#"><img src="js/Lib/slider/images/food8.jpg" alt="img." style="width: 80%" style="height:50%" style="align: center">
-                        </a>
+                        <%--<a href="#"><img src="js/Lib/slider/images/food8.jpg" alt="img." style="width: 80%" style="height:50%" style="align: center">--%>
+                        <%--</a>--%>
 
-                    </div>
-                </div>
-                <div flex>
-                    <div layout="column">
-                        <hide-md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="border: groove" >
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div flex>--%>
+                    <%--<div layout="column">--%>
+                        <%--<hide-md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="border: groove" >--%>
 
 
-                            <div flex>
-                                <md-input-container flex>
-                                    <label style="color:white">Food Name</label>
-                                    <input required name="FoodName" ng-model="filters.foodName" style="color: khaki">
-                                    <div ng-messages="filters.foodName.$error">
-                                        <div ng-message="required">This is required.</div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div flex>
-                                <md-input-container flex>
-                                    <label style="color:white">City Name</label>
-                                    <input required name="CityName" ng-model="filters.location" style="color: khaki">
-                                    <div ng-messages="filters.location.$error">
-                                        <div ng-message="required">This is required.</div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div flex>
-                                <md-button ng-click="searchResults()" class="md-raised md-primary" style="backgroung-color:#0000FF">Search Restuarents
-                                </md-button>
-                            </div>
+                            <%--<div flex>--%>
+                                <%--<md-input-container flex>--%>
+                                    <%--<label style="color:white">Food Name</label>--%>
+                                    <%--<input required name="FoodName" ng-model="filters.foodName" style="color: khaki">--%>
+                                    <%--<div ng-messages="filters.foodName.$error">--%>
+                                        <%--<div ng-message="required">This is required.</div>--%>
+                                    <%--</div>--%>
+                                <%--</md-input-container>--%>
+                            <%--</div>--%>
+                            <%--<div flex>--%>
+                                <%--<md-input-container flex>--%>
+                                    <%--<label style="color:white">City Name</label>--%>
+                                    <%--<input required name="CityName" ng-model="filters.location" style="color: khaki">--%>
+                                    <%--<div ng-messages="filters.location.$error">--%>
+                                        <%--<div ng-message="required">This is required.</div>--%>
+                                    <%--</div>--%>
+                                <%--</md-input-container>--%>
+                            <%--</div>--%>
+                            <%--<div flex>--%>
+                                <%--<md-button ng-click="searchResults()" class="md-raised md-primary" style="backgroung-color:#0000FF">Search Restuarents--%>
+                                <%--</md-button>--%>
+                            <%--</div>--%>
 
-                            <md-card-title-media>
-                                <div class="md-media-sm card-media">
-                                    <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"  />
-                                </div>
-                            </md-card-title-media>
+                            <%--<md-card-title-media>--%>
+                                <%--<div class="md-media-sm card-media">--%>
+                                    <%--<img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"  />--%>
+                                <%--</div>--%>
+                            <%--</md-card-title-media>--%>
 
-                        </hide-md-card>
+                        <%--</hide-md-card>--%>
 
-                    </div>
-                </div>
-            </div>
-            <!--Print search results above dynamically-->
-            <div layout="row">
-                <div ng-repeat="restuarent in restuarents" flex>
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="background-image:url(js/Lib/slider/images/bg19.jpg);background-repeat: no-repeat;background-size: cover" >
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">{{restuarent.Restaurant_Name}}</span>
-                                <span class="md-subhead">{{restuarent.NearestCity}}</span>
-                            </md-card-title-text>
-                            <md-card-title-media>
-                                <div class="md-media-lg card-media"></div>
-                            </md-card-title-media>
-                        </md-card-title>
-                        <md-card-actions layout="row" layout-align="end center">
-                            <md-button ng-click="viewRestuarent(restuarent)">View Restaurant</md-button>
-                            <md-button ng-click="viewAllRestuarents(restuarent)">View All Restaurants</md-button>
-                        </md-card-actions>
-                    </md-card>
-                </div>
-            </div>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<!--Print search results above dynamically-->--%>
+            <%--<div layout="row">--%>
+                <%--<div ng-repeat="restuarent in restuarents" flex>--%>
+                    <%--<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="background-image:url(js/Lib/slider/images/bg19.jpg);background-repeat: no-repeat;background-size: cover" >--%>
+                        <%--<md-card-title>--%>
+                            <%--<md-card-title-text>--%>
+                                <%--<span class="md-headline">{{restuarent.Restaurant_Name}}</span>--%>
+                                <%--<span class="md-subhead">{{restuarent.NearestCity}}</span>--%>
+                            <%--</md-card-title-text>--%>
+                            <%--<md-card-title-media>--%>
+                                <%--<div class="md-media-lg card-media"></div>--%>
+                            <%--</md-card-title-media>--%>
+                        <%--</md-card-title>--%>
+                        <%--<md-card-actions layout="row" layout-align="end center">--%>
+                            <%--<md-button ng-click="viewRestuarent(restuarent)">View Restaurant</md-button>--%>
+                            <%--<md-button ng-click="viewAllRestuarents(restuarent)">View All Restaurants</md-button>--%>
+                        <%--</md-card-actions>--%>
+                    <%--</md-card>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
 
 
@@ -192,6 +192,8 @@
                 </div>
             </div>
             <div flex>
+                <br/>
+                <br/>
                 <div layout="column">
 
                     <hide-md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="border: groove">
@@ -268,6 +270,10 @@
             </div>
 
             <div flex>
+
+                <br/>
+                <br/>
+
                 <div layout="column">
 
                     <hide-md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="border: groove">

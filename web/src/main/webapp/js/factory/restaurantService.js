@@ -22,7 +22,8 @@
         var service = {
             getAllRestaurants: getAllRestaurants,
             getAllCommentsByRestaurant : getAllCommentsByRestaurant,
-            addRatingsToRestaurant : addRatingsToRestaurant
+            addRatingsToRestaurant : addRatingsToRestaurant,
+            getAllFood_Items:getAllFood_Items
 
         };
 
@@ -34,11 +35,15 @@
         }
 
         function getAllCommentsByRestaurant(id) {
-            return $http.get(webApi + 'foodservice/viewcomments?rid=' + id).then(handleSuccess, handleError('Error getting drivers'));
+            return $http.post(webApi + 'restaurant/view_comments?rid=' + id).then(handleSuccess, handleError('Error getting drivers'));
         }
 
         function addRatingsToRestaurant(filters) {
-            return $http.get(webApi + 'foodservice/comment?rid=' + filters.rid + '&cid=' + filters.cid+ '&comment=' + filters.comment+ '&rating=' + filters.starrate+ '&delivery_status=' + filters.delivery_status + '&time_status=' + filters.time_status).then(handleSuccess, handleError('Error getting drivers'));
+            return $http.post(webApi + 'restaurant/add_comments?rid=' + filters.rid + '&cid=' + filters.cid+ '&comment=' + filters.comment+ '&rating=' + filters.starrate+ '&delivery_status=' + filters.delivery_status + '&time_status=' + filters.time_status).then(handleSuccess, handleError('Error getting drivers'));
+        }
+
+        function getAllFood_Items(id) {
+            return $http.post(webApi + 'restaurant/food_items?rid=' + id).then(handleSuccess, handleError('Error getting single driver'));
         }
 
 

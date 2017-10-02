@@ -12,7 +12,7 @@
 
     function registerService($http) {
 
-        var webApi = "http://localhost:8080/rest/";
+        var webApi = "http://localhost:8080/ordertracking/";
 
 
         var service = {
@@ -46,7 +46,7 @@
         }
 
         function restaurantSignIn(filters) {
-            return $http.get(webApi + 'foodservice/restaurantSignIn?cname=' + filters.rlogusername +  '&pwd=' + filters.rlogpwd).then(handleSuccess, handleError('Error getting drivers'));
+            return $http.get(webApi + 'foodservice/restaurantSignIn?rname=' + filters.rlogusername +  '&pwd=' + filters.rlogpwd).then(handleSuccess, handleError('Error getting drivers'));
         }
 
 

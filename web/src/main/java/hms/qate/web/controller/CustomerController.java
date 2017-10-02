@@ -2,9 +2,7 @@ package hms.qate.web.controller;
 
 import com.google.gson.Gson;
 import hms.qate.data.model.Customer;
-import hms.qate.data.model.Restaurant;
 import hms.qate.service.CustomerService;
-import hms.qate.service.RestaurantService;
 import org.jboss.logging.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;

@@ -20,7 +20,7 @@
       if($rootScope.allItems != undefined && $rootScope.allItems.length !=0) {
           var price = 0 ;
           $.each($rootScope.allItems, function (i, item) {
-              price = price + Number(item.Unit_Price) * Number(item.selectedQuantity) ;
+              price = price + Number(item.unit_Price) * Number(item.selectedQuantity) ;
           });
           $scope.totalPrice = price ;
 

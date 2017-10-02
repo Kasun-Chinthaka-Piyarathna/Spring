@@ -2,9 +2,9 @@ package hms.qate.web.controller;
 
 
 import com.google.gson.Gson;
-import hms.qate.data.model.Customer;
 import hms.qate.data.model.Restaurant;
-import hms.qate.service.CustomerService;
+import hms.qate.data.model.food_items;
+import hms.qate.data.model.reviews;
 import hms.qate.service.RestaurantService;
 import org.jboss.logging.Logger;
 import org.json.simple.JSONArray;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.text.ParseException;
 import java.util.List;
 
 
@@ -120,6 +119,84 @@ class ResController {
 
 
     }
+
+
+
+
+    @RequestMapping(value = "/restaurant_signup", method = RequestMethod.POST)
+    @ResponseBody
+    public String SignUp(@RequestParam("rname") final String res_name,
+                         @RequestParam("pwd") final String password) throws org.json.simple.parser.ParseException {
+
+        logger.info("Getting the all Restaurants. /filter: Nearest_city");
+        List<Restaurant> list3 = restaurantService.restaurant_signup(res_name,password);
+        String signedup_restaurant_s = new Gson().toJson(list3);
+        JSONParser parser3 = new JSONParser();
+        JSONArray signedup_restaurant = (JSONArray) parser3.parse(signedup_restaurant_s);
+
+
+        return signedup_restaurant.toString();
+
+
+    }
+
+
+
+
+    @RequestMapping(value = "/food_items", method = RequestMethod.POST)
+    @ResponseBody
+    public String GettingFoodItems(@RequestParam("rid") final int rid) throws org.json.simple.parser.ParseException {
+
+        logger.info("Getting the all food_items ");
+        List<food_items> list3 = restaurantService.GettingFoodItems(rid);
+        String signedup_restaurant_s = new Gson().toJson(list3);
+        JSONParser parser3 = new JSONParser();
+        JSONArray signedup_restaurant = (JSONArray) parser3.parse(signedup_restaurant_s);
+
+
+        return signedup_restaurant.toString();
+
+
+    }
+
+
+
+    @RequestMapping(value = "/view_comments", method = RequestMethod.POST)
+    @ResponseBody
+    public String ViewComments(@RequestParam("rid") final int rid) throws org.json.simple.parser.ParseException {
+
+        logger.info("Getting the all food_items ");
+        List<reviews> list3 = restaurantService.ViewComments(rid);
+        String signedup_restaurant_s = new Gson().toJson(list3);
+        JSONParser parser3 = new JSONParser();
+        JSONArray signedup_restaurant = (JSONArray) parser3.parse(signedup_restaurant_s);
+
+
+        return signedup_restaurant.toString();
+
+
+    }
+
+
+    @RequestMapping(value = "/add_comments", method = RequestMethod.POST)
+    @ResponseBody
+    public String AddComments(@RequestParam("rid") final int rid,
+                              @RequestParam("cid") final int cid,
+                              @RequestParam("comment") final String comment,
+                              @RequestParam("rating") final int rating,
+                              @RequestParam("delivery_status") final String delivery_status,
+                              @RequestParam("time_status") final String time_status) throws org.json.simple.parser.ParseException {
+
+        logger.info("Getting the all food_items ");
+        int amount_of_rows = restaurantService.AddComments(rid,cid,comment,rating,delivery_status,time_status);
+
+        String amount_of_rows_now = String.valueOf(amount_of_rows);
+        return amount_of_rows_now;
+
+
+
+    }
+
 
 
 }

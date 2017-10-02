@@ -71,8 +71,8 @@
 
                     <md-card-title>
                         <md-card-title-text>
-                            <span class="md-headline" style="color:#510BE7">{{item.Name}}</span>
-                            <span class="md-subhead" style="color: #3e8f3e"> Avalable Quantity : {{item.Quantity}}</span>
+                            <span class="md-headline" style="color:#510BE7">{{item.name}}</span>
+                            <span class="md-subhead" style="color: #3e8f3e"> Avalable Quantity : {{item.quantity}}</span>
                         </md-card-title-text>
                         <!--<md-card-title-media>-->
                             <!--<div class="md-media-lg card-media">-->
@@ -82,15 +82,15 @@
                         <!--</md-card-title-media>-->
                     </md-card-title>
                     <md-card-content>
-                        <h2 >Unit Price: {{item.Unit_Price}}</h2>
+                        <h2 >Unit Price: {{item.unit_Price}}</h2>
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
                         <md-input-container class="md-block">
                             <label >Quantity</label>
-                            <input required type="number" name="rate" ng-model="quantity"  />
+                            <input required type="number" name="rate" ng-model="quantity_new"  />
                         </md-input-container>
                         <div class="btn-group" ng-init="style={'background-color':'#204d74'}">
-                        <md-button ng-click="addToCart(item , quantity);style1=style" style="background-color: #2299dd" class="btn btn-default" ng-style="style1">Add To Cart</md-button>
+                        <md-button ng-click="addToCart(item , quantity_new);style1=style" style="background-color: #2299dd" class="btn btn-default" ng-style="style1">Add To Cart</md-button>
                         </div>
                     </md-card-actions>
 
@@ -104,7 +104,7 @@
             <div class="md-list-item-text" layout="column">
 
                 <label>YUMMY CART HELPER</label>
-                <h3>{{ allItem.Name }}</h3>
+                <h3>{{ allItem.name }}</h3>
                 <h4>{{ allItem.selectedQuantity }}</h4>
             </div>
         </md-list-item>

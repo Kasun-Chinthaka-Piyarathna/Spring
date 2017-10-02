@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import hms.qate.data.dao.RestaurantDAO;
 import hms.qate.data.model.Employee;
 import hms.qate.data.model.Restaurant;
+import hms.qate.data.model.food_items;
+import hms.qate.data.model.reviews;
 import hms.qate.data.utils.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -122,12 +124,77 @@ public class RestaurantDAOImpl extends HibernateUtil implements RestaurantDAO {
 
 
 
+    @SuppressWarnings("rawtypes")
+    @Override
+    public List<Restaurant> restaurant_signup(String res_name,String password) {
+        Session session3 = getSession();
+        Query query3 = session3.createQuery("from Restaurant where RUsername = :input1 and Password = :input2");
+        query3.setParameter("input1", res_name);
+        query3.setParameter("input2", password);
+        List restaurantObjects3 = query3.list();
+        return  restaurantObjects3;
+
+    }
+
+
+    @SuppressWarnings("rawtypes")
+    @Override
+    public List<food_items> GettingFoodItems(int Restaurant_ID) {
+        Session session3 = getSession();
+        Query query3 = session3.createQuery("from food_items where Restaurant_ID = :code ");
+        query3.setParameter("code", Restaurant_ID);
+        List restaurantObjects3 = query3.list();
+        return  restaurantObjects3;
+
+    }
+
+
+
+    @SuppressWarnings("rawtypes")
+    @Override
+    public List<reviews> ViewComments(int rid) {
+        Session session3 = getSession();
+        Query query3 = session3.createQuery("from reviews where restaurant_ID = :code ");
+        query3.setParameter("code", rid);
+        List restaurantObjects3 = query3.list();
+        return  restaurantObjects3;
+
+    }
 
 
 
 
 
+    @SuppressWarnings("rawtypes")
+    @Override
+    public int AddComments(
+          int rid,
+          int cid,
+          String comment,
+          int rating,
+          String delivery_status,
+          String time_status
+    ) {
 
+
+        Session session = getSession();
+        Query query2 = session.createSQLQuery("INSERT INTO reviews (comment, customer_ID,delivery_Status,rating,restaurant_ID,time_Status) VALUES (?,?,?,?,?,?)");
+        query2.setParameter(0, comment);
+        query2.setParameter(1, cid);
+        query2.setParameter(2, delivery_status);
+        query2.setParameter(3, rating);
+        query2.setParameter(4, rid);
+        query2.setParameter(5, time_status);
+        int rowsAffected_new = query2.executeUpdate();
+        if (rowsAffected_new > 0) {
+            System.out.println(rowsAffected_new + "(s) were inserted");
+//            session.getTransaction().commit();
+        }
+
+        return rowsAffected_new;
+
+
+    }
 
 
 

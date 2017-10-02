@@ -1,11 +1,8 @@
 package hms.qate.service.impl;
 
 import hms.qate.data.dao.CustomerDAO;
-import hms.qate.data.dao.RestaurantDAO;
 import hms.qate.data.model.Customer;
-import hms.qate.data.model.Restaurant;
 import hms.qate.service.CustomerService;
-import hms.qate.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

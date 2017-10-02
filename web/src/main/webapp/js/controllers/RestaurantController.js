@@ -7,9 +7,9 @@
         .module('yummy')
         .controller('restaurantController', restaurantController);
 
-    restaurantController.$inject = ['$scope', 'restaurantService','$state','$mdDialog'];
+    restaurantController.$inject = ['$scope', 'restaurantService','$state','$mdDialog','$rootScope','$mdToast'];
 
-    function restaurantController($scope , restaurantService,$state ,$mdDialog) {
+    function restaurantController($scope , restaurantService,$state ,$mdDialog,$rootScope,$mdToast) {
 
 
         $scope.imagePath = 'images/hotel1.jpg';
@@ -26,9 +26,59 @@
         };
 
 
+
+        var last = {
+            bottom: false,
+            top: true,
+            left: false,
+            right: true
+        };
+
+        $scope.toastPosition = angular.extend({}, last);
+
+        $scope.getToastPosition = function () {
+            sanitizePosition();
+
+            return Object.keys($scope.toastPosition)
+                .filter(function (pos) {
+                    return $scope.toastPosition[pos];
+                })
+                .join(' ');
+        };
+
+        function sanitizePosition() {
+            var current = $scope.toastPosition;
+
+            if (current.bottom && last.top) current.top = false;
+            if (current.top && last.bottom) current.bottom = false;
+            if (current.right && last.left) current.left = false;
+            if (current.left && last.right) current.right = false;
+
+            last = angular.extend({}, current);
+        }
+
         $scope.viewRestaurant = function (restaurant) {
 
-            $state.go('findus' , {restaurant : restaurant} );
+
+
+            if (!($rootScope.loggedIn)) {
+
+                $state.go('restaurant');
+
+                var pinTo = $scope.getToastPosition();
+
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent('Please Signin!')
+                        .position(pinTo)
+                        .hideDelay(3000)
+                );
+
+            }else {
+
+                $state.go('findus', {restaurant: restaurant});
+
+            }
 
         };
 
@@ -58,7 +108,7 @@
 
 
                 controller: DialogController,
-                templateUrl: 'images/dialog1.tmpl.html',
+                templateUrl: 'views/dialog1.tmpl.jsp',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose:true,

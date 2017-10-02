@@ -18,13 +18,14 @@
 
     function findusService($http) {
 
-        var webApi = "http://localhost:8080/rest/";
+        var webApi = "http://localhost:8080/ordertracking/";
 
 
         var service = {
             getRestaurantsByFoodAndCity: getRestaurantsByFoodAndCity,
             getRestaurantsByName: getRestaurantsByName,
             getRestaurantsByLocation: getRestaurantsByLocation,
+            getAllFood_Items:getAllFood_Items,
 
         };
 
@@ -42,6 +43,10 @@
 
         function getRestaurantsByLocation(filters) {
             return $http.get(webApi + 'foodservice/locationWise?loc=' + filters.nearestCity).then(handleSuccess, handleError('Error getting single driver'));
+        }
+
+        function getAllFood_Items(filters) {
+            return $http.post(webApi + 'restaurant/food_items?rid=' + filters.Restuarant_ID).then(handleSuccess, handleError('Error getting single driver'));
         }
 
 
