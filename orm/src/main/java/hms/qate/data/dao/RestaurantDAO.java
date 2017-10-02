@@ -1,6 +1,5 @@
 package hms.qate.data.dao;
 
-import hms.qate.data.model.Employee;
 import hms.qate.data.model.Restaurant;
 import hms.qate.data.model.food_items;
 import hms.qate.data.model.reviews;

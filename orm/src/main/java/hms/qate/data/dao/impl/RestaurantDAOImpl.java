@@ -1,8 +1,6 @@
 package hms.qate.data.dao.impl;
 
-import com.google.gson.Gson;
 import hms.qate.data.dao.RestaurantDAO;
-import hms.qate.data.model.Employee;
 import hms.qate.data.model.Restaurant;
 import hms.qate.data.model.food_items;
 import hms.qate.data.model.reviews;
@@ -10,14 +8,8 @@ import hms.qate.data.utils.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
